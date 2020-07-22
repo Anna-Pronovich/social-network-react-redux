@@ -1,43 +1,47 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
 
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import s from './Dialogs.module.css';
+import styles from './Dialogs.module.css';
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component={"textarea"} placeholder='Enter your message' name="newMessageBody" />
+            </div>
+            <div>
+                <button>Send</button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux  = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm );
 
 const Dialogs = (props) => {
 
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map( d => <DialogItem name={d.name} key={d.id} id={d.id} />  );
-    let messagesElements = state.messages.map( m => <Message message={m.message} key={m.id} /> );
-    let newMessageBody = state.newMessageBody;
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />);
+    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id} />);
 
-    let onSendMessageClick = () => {
-        props.sendMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
 
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
-    if(!props.isAuth) {
-        return <Redirect to={'./login'}/>
-    }
 
     return (
-        <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
-                { dialogsElements }
+        <div className={styles.dialogs}>
+            <div className={styles.dialogsItems}>
+                {dialogsElements}
             </div>
-            <div className={s.messages}>
-                <div>{ messagesElements }</div>
+            <div className={styles.messages}>
+                <div>{messagesElements}</div>
                 <div>
-                    <div><textarea value={newMessageBody}
-                                   onChange={onNewMessageChange}
-                                   placeholder='Enter your message'></textarea></div>
-                    <div><button onClick={onSendMessageClick}>Send</button></div>
+                    <AddMessageFormRedux onSubmit={addNewMessage}/> 
+
                 </div>
             </div>
         </div>
