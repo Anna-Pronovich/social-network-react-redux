@@ -36,7 +36,6 @@ const MyPosts = (props) => {
         props.posts.map((post, index) => <Post key={`${index}${post.message}`} message={post.message} likesCount={post.likesCount} />);
 
     let addPost = (values) => {
-        console.log(values)
         props.addPost(values.newPostText);
     }
 

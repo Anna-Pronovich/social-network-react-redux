@@ -1,44 +1,6 @@
-.userPhoto {
-    width: 100px;
-    height: 100px;
-}
-
-.page {
- display: block;
- margin: 8px 0;
- padding: 0 8px;
- border: 1px solid black;
- background-color: white;
-}
-
-.selectedPage {
-    font-weight: bold;
-    color:white;
-    background-color: #0cf;
-}
-
-.pagination {
-    max-width: 920px;
-    height: 30x;
-    margin: 8px;
-    display: flex;
-    overflow-y:auto ;
-}
-
 .usersContainer {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items:center;
-}
-
-.userItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width:  250px;
-    height: 220px;
-    margin: 10px;
-    border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

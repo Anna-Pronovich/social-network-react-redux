@@ -1,0 +1,15 @@
+.userItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:  250px;
+    height: 220px;
+    margin: 10px;
+    border: 1px solid white;
+}
+
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}
