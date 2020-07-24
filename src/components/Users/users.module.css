@@ -18,12 +18,11 @@
 }
 
 .pagination {
-    max-width: 900px;
+    max-width: 920px;
+    height: 30x;
     margin: 8px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
+    display: flex;
+    overflow-y:auto ;
 }
 
 .usersContainer {
