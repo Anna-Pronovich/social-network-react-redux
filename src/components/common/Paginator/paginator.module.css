@@ -13,9 +13,8 @@
  }
  
  .pagination {
-     max-width: 920px;
-     height: 30x;
-     margin: 8px;
      display: flex;
-     overflow-y:auto ;
+     width: 550px;
+     height: 30x;
+     margin: 8px auto;
  }

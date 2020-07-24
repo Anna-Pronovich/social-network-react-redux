@@ -5,10 +5,10 @@ import Paginator from "../common/Paginator/Paginator";
 
 import styles from "./users.module.css";
 
-const Users = ({ currentPage, totalUsersCount, pageSize, onPageChanged, users, ...props }) => (
+const Users = ({ currentPage, totalItemsCount, itemsPerPage, onPageChanged, users, ...props }) => (
     <div>
         <Paginator currentPage={currentPage} onPageChanged={onPageChanged}
-            totalUsersCount={totalUsersCount} pageSize={pageSize} />
+            totalItemsCount={totalItemsCount} itemsPerPage={itemsPerPage} />
         <div className={styles.usersContainer}>
             {
                 users.map(user =>
