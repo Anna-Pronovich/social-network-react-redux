@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-// import { compose } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 
 import { Input } from "../common/FormControls/FormControls";
 import { required } from "../../utils/validators/validators";
 import { login } from "../../redux/auth-reducer";
-// import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 import style from "../common/FormControls/FormsControls.module.css";
 
