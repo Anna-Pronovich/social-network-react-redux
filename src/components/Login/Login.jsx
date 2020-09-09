@@ -22,7 +22,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
             <div>
                 <Field component={Input} name={"rememberMe"} type={"checkbox"} /> remember me
             </div>
-            {captchaUrl && <img src={captchaUrl} />}
+            {captchaUrl && <img src={captchaUrl} alt="captcha" />}
             {captchaUrl &&
                 <Field component={Input} name={"captcha"} type={"text"} placeholder={"Symbols from image"} validate={[required]} />}
             {error && <div className={style.formSummaryError}>{error}</div>}
