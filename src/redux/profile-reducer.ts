@@ -1,8 +1,8 @@
 import { PostType, ProfileType } from '../types/types';
+import { profileActionTypes } from "./actionTypes";
 
 import {
     ADD_POST,
-    UPDATE_NEW_POST_TEXT,
     SET_USER_PROFILE,
     SET_USER_STATUS,
     SAVE_PHOTO_SUCCESS,
@@ -22,7 +22,7 @@ const initialState = {
 
 type InitialStateType = typeof initialState;
 
-const profileReducer = (state = initialState, action: any): InitialStateType => {
+const profileReducer = (state = initialState, action: profileActionTypes): InitialStateType => {
 
     switch (action.type) {
         case ADD_POST: {
@@ -36,12 +36,6 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
                 posts: [...state.posts, newPost],
                 newPostText: ''
             };
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
-            }
         }
         case SET_USER_PROFILE: {
             return {

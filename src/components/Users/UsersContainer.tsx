@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect,DefaultRootState } from "react-redux";
+import { connect } from "react-redux";
 import { compose } from 'redux';
-import { setCurrentPage, toggleFollowingProgress } from "../../redux/actionCreators/user-action-creator";
+// import { setCurrentPage, toggleFollowingProgress } from "../../redux/actionCreators/user-action-creator";
 import { follow, unfollow, requestUsers } from "../../redux/redux-thunk/user-thunk";
 import { UserType } from '../../types/types';
 import { AppStateType } from '../../redux/redux-store';

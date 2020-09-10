@@ -9,6 +9,8 @@ import {
 } from "./constants"
 import { UserType } from '../types/types';
 
+import { usersActionTypes } from "./actionTypes";
+
 const initialState = {
     users: [] as Array<UserType>,
     pageSize: 9,
@@ -20,7 +22,7 @@ const initialState = {
 
 type InitialState = typeof initialState;
 
-export const usersReducer = (state = initialState, action: any): InitialState => {
+export const usersReducer = (state = initialState, action: usersActionTypes): InitialState => {
     switch (action.type) {
         case FOLLOW:
             return {

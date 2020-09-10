@@ -1,8 +1,14 @@
+import { AppStateType } from '../redux-store';
+import { ThunkAction } from 'redux-thunk';
 import { authAPI, securityAPI } from "../../api/api";
 import { stopSubmit } from "redux-form";
 import { setAuthUserData, getCaptchaUrlSuccess } from "../actionCreators/auth-action-creator";
 
-export const getAuthUserData = () => async (dispatch: any) => {
+import { authActionTypes } from "../actionTypes";
+
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, authActionTypes>
+
+export const getAuthUserData = ():ThunkType => async (dispatch) => {
   const response = await authAPI.me();
 
   if (response.data.resultCode === 0) {
@@ -11,13 +17,13 @@ export const getAuthUserData = () => async (dispatch: any) => {
   }
 }
 
-export const getCaptchaUrl = () => async (dispatch: any) => {
+export const getCaptchaUrl = ():ThunkType => async (dispatch) => {
   const response = await securityAPI.getCaptchaUrl()
 
   dispatch(getCaptchaUrlSuccess(response.data.url))
 }
 
-export const login = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch: any) => {
+export const login = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch:any) => {
   const response = await authAPI.login(email, password, rememberMe, captcha)
 
   if (response.data.resultCode === 0) {
@@ -33,7 +39,7 @@ export const login = (email: string, password: string, rememberMe: boolean, capt
   }
 }
 
-export const logout = () => async (dispatch: any) => {
+export const logout = ():ThunkType => async (dispatch) => {
   const response = await authAPI.logout()
 
   if (response.data.resultCode === 0) {

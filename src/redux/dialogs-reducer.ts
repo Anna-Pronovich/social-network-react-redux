@@ -1,4 +1,5 @@
 import { SEND_MESSAGE } from "./constants";
+import { dialogActionTypes } from "./actionTypes";
 
 type DialogType = {
     id: number,
@@ -30,7 +31,7 @@ const initialState = {
 
 type InitialStateType = typeof initialState;
 
-const dialogsReducer = (state = initialState, action: any): InitialStateType => {
+const dialogsReducer = (state = initialState, action: dialogActionTypes): InitialStateType => {
     switch (action.type) {
         case SEND_MESSAGE:
             let body = action.newMessageBody;
