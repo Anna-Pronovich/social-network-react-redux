@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import { Input } from "../common/FormControls/FormControls";
 import { required } from "../../utils/validators/validators";
-import { login } from "../../redux/auth-reducer";
+import { login } from "../../redux/redux-thunk/auth-thunk";
 
 import style from "../common/FormControls/FormsControls.module.css";
 

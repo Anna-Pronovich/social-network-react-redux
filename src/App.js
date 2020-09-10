@@ -11,7 +11,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 import LoginPage from "./components/Login/Login";
 import Preloader from "./components/common/Preloader/Preloader";
 
-import { initializeApp } from "./redux/app-reducer";
+import { initializeApp } from "./redux/redux-thunk/app-thunk";
 
 import './App.css';
 class App extends React.Component {

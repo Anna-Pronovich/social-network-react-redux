@@ -5,6 +5,7 @@ import {
   setUsers,
   setTotalUsersCount,
   toggleFollowingProgress,
+  followSuccess,
   unfollowSuccess
 } from "../actionCreators/user-action-creator"
 

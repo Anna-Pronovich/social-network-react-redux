@@ -15,7 +15,7 @@ const initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
-    followingInProgress: [] as Array<number>,,
+    followingInProgress: [] as Array<number>,
 };
 
 type InitialState = typeof initialState;
