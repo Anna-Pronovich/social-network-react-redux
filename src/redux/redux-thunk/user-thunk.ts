@@ -2,7 +2,9 @@ import { AppStateType } from '../redux-store';
 import { Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 
-import { usersAPI } from "../../api/api";
+import { ResultCodesEnum } from "../../api/api";
+import { usersAPI } from "../../api/users-api";
+
 import {
   toggleIsFetching,
   setCurrentPage,
@@ -35,7 +37,7 @@ const followUnfollowFlow = async (dispatch: DispatchType,
   dispatch(toggleFollowingProgress(true, userId));
   let response = await apiMethod(userId);
 
-  if (response.data.resultCode === 0) {
+  if (response.data.resultCode === ResultCodesEnum.Success) {
     dispatch(actionCreator(userId));
   }
   dispatch(toggleFollowingProgress(false, userId));
